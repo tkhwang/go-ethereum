@@ -33,6 +33,8 @@ import (
 )
 
 // Client defines typed wrappers for the Ethereum RPC API.
+// Client 구조체는 이더리움 RPC API를 위한 typed wrapper를 정의한다.
+
 type Client struct {
 	c *rpc.Client
 }
@@ -62,9 +64,14 @@ func (ec *Client) Close() {
 // Blockchain Access
 
 // BlockByHash returns the given full block.
-//
+// BlockByHash는 주어진 전체 블록을 리턴한다.
+
 // Note that loading full blocks requires two requests. Use HeaderByHash
 // if you don't need all transactions or uncle headers.
+
+// 전체 블럭을 로딩하기 위해서는 두 개의 요청이 필요로 한 것을 참고하라.
+// 전체 트랜잭션이나 엉클 해드가 필요로 하지 않다면 HeaderByHash를 이용하라.
+
 func (ec *Client) BlockByHash(ctx context.Context, hash common.Hash) (*types.Block, error) {
 	return ec.getBlock(ctx, "eth_getBlockByHash", hash, true)
 }
