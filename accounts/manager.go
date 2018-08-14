@@ -26,6 +26,9 @@ import (
 
 // Manager is an overarching account manager that can communicate with various
 // backends for signing transactions.
+
+// Manager 구조체는 중요한 계정 매니저로서 트랜잭션 서명을 위한 다양한 백엔드 서버와 통신을 수행함.
+
 type Manager struct {
 	backends map[reflect.Type][]Backend // Index of backends currently registered
 	updaters []event.Subscription       // Wallet update subscriptions for all backends
