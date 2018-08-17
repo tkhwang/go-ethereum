@@ -22,5 +22,3 @@ For my own understanding the ethereum, I will briefly summarize it as I read the
 ![keystore.go](./accounts/keystore/keystore.png)
 
 ### `accounts/keystore_passphrase`
-
-![keystore_passphrase.go](./accounts/keystore/keystore_passphrase.png)
